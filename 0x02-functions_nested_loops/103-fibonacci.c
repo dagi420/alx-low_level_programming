@@ -1,4 +1,4 @@
-#include <Stdio.h>
+#include <stdio.h>
 /** 
  * main - main block 
  * Description: print the sum of even Fibonacci nu,bers up to fib value
