@@ -1,7 +1,7 @@
 #include <stdio.h>
-/** 
- * main - main block 
- * Description: print the sum of even Fibonacci nu,bers up to fib value
+/**
+ * main - main block
+ * Description: print the sum of even Fibonacci numbers up to fib value
  * not exceeding 4,000,000.
  * Return: 0
  */
