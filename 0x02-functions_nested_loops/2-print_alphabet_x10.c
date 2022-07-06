@@ -12,7 +12,7 @@ while (alphabet_count < 10)
 char ch = 'a';
 while (ch <= 'z')
 {
- _putchar(ch);
+_putchar(ch);
 ch++;	
 }
 alphabet_count++;
