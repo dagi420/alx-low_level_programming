@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * print_alphabet_x10 - prints alphabets 10
- * Description: prints 10 times 
- * Return: Always(0).
- */
+*
+* print_alphabet_x10 - prints alphabets 10
+* Description: prints 10 time
+* Return: Always(0).
+*/
 void print_alphabet_x10(void)
 {
 int alphabet_count = 0;
@@ -14,8 +15,7 @@ while (ch <= 'z')
 {
  _putchar(ch);
 ch++;	
-}
-alphabet_count++;
+}alphabet_count++;
 _putchar('\n');
 }
 }
