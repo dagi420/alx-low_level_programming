@@ -4,7 +4,7 @@
  * @s: input string
  * Return: no return
  */
-voidrev_String(char *s)
+void rev_String(char *s)
 {
 int count = 0, i, j;
 char *str, temp;
