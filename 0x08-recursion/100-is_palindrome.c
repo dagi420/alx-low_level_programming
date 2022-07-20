@@ -13,7 +13,7 @@ return (1 + _strlen_recursion(s + 1));
 }
 /**
  * comprator - compares each character of the string.
- * @s string
+ * @s: string
  * @n1: smallest iterator
  * @n2: largest iterator
  * Return: .
@@ -33,7 +33,7 @@ return (0);
  * @s: string
  * Return: 1 if s is apalindrome, 0 if not.
  */
- int is_palindrome(char *s)
+int is_palindrome(char *s)
 {
 if (*s == '\0')
 return (1);
