@@ -6,7 +6,7 @@
  * Return: the number of nodes
  */
 
-size_t print_listint(const listint_c *h)
+size_t print_listint(const listint_t *h)
 
 {	
 	
@@ -22,7 +22,7 @@ size_t print_listint(const listint_c *h)
 
 		printf("%d\n", cursor->n);
 
-		count=+ 1;
+		count += 1;
 		
 		cursor = cursor->next;
 
