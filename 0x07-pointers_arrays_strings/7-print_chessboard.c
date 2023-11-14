@@ -1,21 +1,22 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * print_chessboard -main entry.
- * @a:char pointer
- * Description:function that prints the chessboard.
- * Return:void
+ * print_chessboard - prints the chessboard
+ * @a: input pointer.
+ * Return: no return.
  */
 void print_chessboard(char (*a)[8])
 {
-int x, y;
-for (x = 0; x < 8 ; x++)
-{
-for (y = 0; y < 8; y++)
-{
-putchar(a[x][y]);
-}
-putchar ('\n');
-}
+	unsigned int i, m = 0;
+
+	for (i = 0; i < 64; i++)
+	{
+		if (i % 8 == 0 && i != 0)
+		{
+			m = i;
+			_putchar('\n');
+		}
+		_putchar(a[i / 8][i - m]);
+	}
+	_putchar('\n');
 }
