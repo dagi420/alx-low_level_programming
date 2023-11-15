@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- * Dagim Daniel Elias 11/15/23
  * _strlen_recursion - size
  * @s: pointer to string params
  *Return: recursion
