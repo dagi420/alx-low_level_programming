@@ -1,51 +1,77 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
- * _strlen - find length of a string
- * @s: string
- * Return: int
- */
+* count_word - helper function to count the number of words in a string
+* @s: string to evaluate
+* Return: number of words
+*/
 
-
-int _strlen(char *s)
+int count_word(char *s)
 {
-int size = 0;
-for (; s[size] != '\0'; size++)
-;
-return (size);
+int flag, c, w;
+
+flag = 0;
+w = 0;
+
+for (c = 0; s[c] != '\0'; c++)
+{
+if (s[c] == ' ')
+flag = 0;
+else if (flag == 0)
+{
+flag = 1;
+w++;
+}
+}
+
+return (w);
 }
 
 /**
- * *argstostr - description
- * @ac: int
- * @av: arguments
- * Return: string
- */
+* **strtow - splits a string into words
+* @str: string to split
+* Return: pointer to an array of strings (Success)
+* or NULL (Error)
+*/
 
-char *argstostr(int ac, char **av)
+char **strtow(char *str)
 {
-int i = 0, nc = 0, j = 0, cmpt = 0;
-char *s;
+char **matrix, *tmp;
+int i, k = 0, len = 0, words, c = 0, start, end;
 
-if (ac == 0 || av == NULL)
-	return (NULL);
+while (*(str + len))
+len++;
+words = count_word(str);
+if (words == 0)
+return (NULL);
 
-for (; i < ac; i++, nc++)
-	nc += _strlen(av[i]);
+matrix = (char **) malloc(sizeof(char *) * (words + 1));
+if (matrix == NULL)
+return (NULL);
 
-s = malloc(sizeof(char) * nc + 1);
-if (s == 0)
-	return (NULL);
-
-for (i = 0; i < ac; i++)
+for (i = 0; i <= len; i++)
 {
-	for (j = 0; av[i][j] != '\0'; j++, cmpt++)
-		s[cmpt] = av[i][j];
-
-	s[cmpt] = '\n';
-	cmpt++;
+if (str[i] == ' ' || str[i] == '\0')
+{
+if (c)
+{
+end = i;
+tmp = (char *) malloc(sizeof(char) * (c + 1));
+if (tmp == NULL)
+return (NULL);
+while (start < end)
+*tmp++ = str[start++];
+*tmp = '\0';
+matrix[k] = tmp - c;
+k++;
+c = 0;
 }
-s[cmpt] = '\0';
+}
+else if (c++ == 0)
+start = i;
+}
+matrix[k] = NULL;
 
-return (s);
+return (matrix);
 }
